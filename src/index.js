@@ -17,6 +17,9 @@ function refreshWeather(response) {
   temperatureElement.innerHTML = Math.round(temperature);
   iconElement.innerHTML = `<img src="${response.data.condition.icon_url}";
   class="weather-icon"/>`;
+
+  getForecast(response.data.city);
+
 }
 function formatDate(date) {
   let minutes = date.getMinutes();
@@ -52,7 +55,34 @@ function handleSearchSubmit(event) {
   searchCity(searchInput.value);
 }
 
-function displayForecast() {
+
+
+
+
+
+
+
+
+
+
+
+function getForecast(city){
+let apiKey ="o26te0f2d5dba0a4524b73ca31ad79a0";
+let apiURL =
+  `https://api.shecodes.io/weather/v1/forecast?query=${city}&key=${apiKey}&units=metric`;
+axios(apiURL).then(displayForecast);
+
+console.log(apiURL);
+
+
+
+}
+
+
+
+
+function displayForecast(response) {
+  console.log(response.data);
   let days = ["Tue", "Wed", "Thurs", "Fri", "Sat", "Sun"];
   let forecastHtml = "";
 
@@ -80,4 +110,7 @@ let searchFormElement = document.querySelector("#search-form");
 searchFormElement.addEventListener("submit", handleSearchSubmit);
 
 searchCity("Durban");
-displayForecast("forecast");
+
+
+
+
