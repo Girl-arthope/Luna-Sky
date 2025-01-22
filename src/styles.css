@@ -1,6 +1,6 @@
 body {
   background-color: pink;
-  font-family: "Montserrat", serif;
+   font-family: "Montserrat", serif;
 }
 a {
   color: #f65282;
@@ -34,7 +34,6 @@ header {
   padding: 16px 33px;
   border: none;
   font-size: 13px;
-  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
   margin-left: 5px;
   border-radius: 6px;
   color: white;
